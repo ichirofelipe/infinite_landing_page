@@ -1,0 +1,46 @@
+.alert{
+    &-default{
+        background: map-get($colors, "dirtywhite");
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    @include m(fixed){
+        top: 0;
+    }
+
+    @include e(notify){
+        position: fixed;
+        margin-top: -15px;
+        right: 0;
+        transform: translateX(-15px);
+        border-radius: 5px;
+        background: map-get($colors, "dimwhite");
+        padding: 10px 15px;
+        box-shadow: 0px 2px 8px 0px map-get($colors, "lightgray");
+        font-weight: bold;
+        opacity: 0;
+
+        &.active{
+            transition: 1s;
+            margin-top: 15px;
+            opacity: 1;
+
+            &.done{
+                opacity: 0;
+                transition: 0.75s ease-out;
+                transform: translateX(50%);
+            }
+        }
+    }
+
+    @include m(success){
+        background: map-get($colors, "bluegray");
+        color: map-get($colors, "white");
+    }
+
+    @include m(error){
+        background: map-get($colors, "red");
+        color: map-get($colors, "white");
+    }
+}

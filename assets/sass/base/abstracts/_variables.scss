@@ -1,0 +1,23 @@
+$colors: (
+  "white":              #FFFFFF,
+  "black":              #000000,
+  "default":            #333333,
+  "bluegray":           #343a40,
+  "dirtywhite":         #dddddd,
+  "lightgray":          #999999,
+  "dimwhite":           #efefef,
+  "red":                #df3636
+);
+
+// Fonts and type
+$fontsize: 62.5%;
+
+$fontfamily: sans-serif;
+
+// Breakpoins
+$breakpoint-xs: 426px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 769px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;

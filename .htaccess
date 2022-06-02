@@ -1,0 +1,16 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ErrorDocument 403 /infinite_landing_page/include/pages/user/403.php?status=true
+ErrorDocument 404 /infinite_landing_page/include/pages/user/404.php?status=true
+
+#ADMIN PAGES
+RewriteRule ^admin$ index.php?admin_code=websites [L]
+RewriteRule ^admin/([a-z]+)$ index.php?active_page=$1&admin_code=$1 [L]
+RewriteRule ^admin/([a-z]+)/page/([0-9]+)$ index.php?active_page=$1&admin_code=$1&page=$2 [L]
+
+#ACTION REQUESTS
+RewriteRule ^([a-z]+)-request$ action/$1.php [L]

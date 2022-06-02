@@ -1,0 +1,21 @@
+@mixin e($name){
+    @at-root #{&}__#{$name}{
+        @content;
+    }
+}
+
+@mixin m($name){
+    @at-root #{&}--#{$name}{
+        @content;
+    }
+}
+
+@mixin square($size){
+    height: $size;
+    width: $size;
+}
+
+@mixin round($size){
+    @include square($size);
+    border-radius: 100%;
+}

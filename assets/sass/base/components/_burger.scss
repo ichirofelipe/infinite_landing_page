@@ -1,0 +1,55 @@
+.menu{
+    $transition: all .2s ease-in-out;
+    $width: 30;
+    $height: $width / 1.25;
+    $bars: $width / 10;
+    $spacing: ($height - ($bars*3))/1.5;
+
+    &-btn{
+        @extend %center-content;
+        width: #{$width}px;
+        height: #{$height}px;
+        position: relative;
+        cursor: pointer;
+        transition: $transition;
+        overflow: hidden;
+        z-index: 11;
+
+        @include e(burger){
+            width: 100%;
+            height: #{$bars}px;
+            background: map-get($colors, "white");
+            border-radius: 5px;
+            transition: $transition;
+
+            &.open{
+                transform: translateX(-50px);
+                background-color: transparent;
+
+                &:before{
+                    transform: rotate(45deg) translate(35px, -35px);
+                }
+                &:after{
+                    transform: rotate(-45deg) translate(35px, 35px);
+                }
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: #{$bars}px;
+                background: #fff;
+                border-radius: 5px;
+                transition: $transition;
+            }
+            &:before{
+                transform: translateY(-#{$spacing}px);
+            }
+            &:after{
+                transform: translateY(#{$spacing}px);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.button{
+    background: darken(map-get($colors, "dimwhite"), 8%);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: 16px;
+
+    @include m(default){
+        border-radius: 3px;
+
+        &:hover{
+            background: darken(map-get($colors, "dirtywhite"), 10%);
+        }
+    }
+}

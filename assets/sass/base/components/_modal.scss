@@ -1,0 +1,47 @@
+@mixin close($size, $size1){
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: $size;
+    height: $size1;
+    background: map-get($colors, "white");
+}
+
+.modal{
+    background: map-get($colors, "white");
+    width: $breakpoint-xs - 1;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+
+    @include e(overlay){
+        @extend %overlay;
+        @extend %center-content;
+        z-index: 15;
+    }
+
+    @include e(close){
+        @include square(40px);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transform: rotate(45deg);
+        opacity: 0.5;
+        cursor: pointer;
+        transition: 0.25s;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &:after{
+            @include close(100%, 4px);
+        }
+        &:before{
+            @include close(4px, 100%);
+        }
+    }
+}

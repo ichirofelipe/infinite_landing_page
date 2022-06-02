@@ -1,0 +1,20 @@
+.icon{
+    &-user-1:before {
+        content: '\e801';
+    }
+    &-left-open:before { 
+        content: '\e800';
+    }
+    &-right-open:before {
+        content: '\e802';
+    }
+    &-lock:before {
+        content: '\e803';
+    }
+    &-eye:before {
+        content: '\e804';
+    }
+    &-eye-off:before {
+        content: '\e805';
+    }
+}

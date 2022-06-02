@@ -1,0 +1,58 @@
+.d{
+    &-flex{
+        display: flex !important;
+    }
+    &-grid{
+        display: grid !important;
+    }
+    &-inline{
+        &-flex{
+            display: inline-flex !important;
+        }
+    }
+    &-block{
+        display: block !important;
+    }
+    &-none{
+        display: none !important;
+    }
+    @media only screen and (min-width: $breakpoint-md) {
+        &-md{
+            &-grid{
+                display: grid !important;
+            }
+            &-none{
+                display: none !important;
+            }
+            &-block{
+                display: block !important;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-sm) {
+        &-sm{
+            &-block{
+                display: block !important;
+            }
+            &-flex{
+                display: flex !important;
+            }
+            &-none{
+                display: none !important;
+            }
+        }
+    }
+}
+
+.position{
+    &-relative{
+        position: relative !important;
+    }
+}
+
+.overflow{
+    &-hidden{
+        overflow: hidden !important;
+    }
+}

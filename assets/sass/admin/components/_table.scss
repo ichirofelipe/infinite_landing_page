@@ -1,0 +1,43 @@
+.table{
+    border-collapse: collapse;
+    border-spacing:0;
+    min-width: $breakpoint-md;
+    width: 100%;
+    position: relative;
+
+    @include e(container){
+        position: relative;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    *{
+        border: none;
+    }
+
+    th{
+        text-align: left;
+        padding: 15px;
+        background: darken(map-get($colors, "dimwhite"), 8%);
+        text-transform: capitalize;
+    }
+
+    tbody{
+        tr{
+            border-bottom: 1px solid darken(map-get($colors, "dimwhite"), 10%);
+
+            &:nth-child(even){
+                background: darken(map-get($colors, "dimwhite"), 2%);
+            }
+
+            &:hover{
+                background: darken(map-get($colors, "dimwhite"), 4%);
+                cursor: pointer;
+            }
+
+            td{
+                padding: 15px;
+            }
+        }
+    }
+}

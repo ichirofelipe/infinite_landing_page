@@ -1,0 +1,34 @@
+@import "../../base/layout/header";
+
+#navigation{
+    position: relative;
+    border-bottom: 1px solid darken(map-get($colors, "bluegray"), 5%);
+}
+
+#sidemenu{
+    width: 200px;
+    z-index: 1;
+
+    @media only screen and (max-width: $breakpoint-md - 1) {
+        width: 50px;
+    }
+
+    li{
+        padding: 0 !important;
+        transition: 0.5s;
+        border-bottom: 1px solid darken(map-get($colors, "bluegray"), 5%);
+
+        &:hover,&.active{
+            background: darken(map-get($colors, "bluegray"), 5%);
+        }
+    }
+
+    a{
+        padding: 23px 15px;
+        display: flex;
+
+        @media only screen and (max-width: $breakpoint-md - 1) {
+            padding: 15px;
+        }
+    }
+}

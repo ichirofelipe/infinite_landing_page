@@ -1,0 +1,13 @@
+@import "../../base/components/icons";
+
+.icon{
+    &-trash-empty:before {
+        content: '\e809';
+    }
+    &-plus:before {
+        content: '\e80a';
+    }
+    &-globe:before {
+        content: '\e806';
+    }
+}

@@ -1,0 +1,22 @@
+.bg{
+
+    &-bluegray{
+        background-color: map-get($colors, "bluegray");
+
+        @include m(1){
+            background-color: darken(map-get($colors, "bluegray"), 2.5%);
+        }
+    }
+    &-dimwhite{
+        background-color: map-get($colors, "dimwhite");
+    }
+}
+.color{
+    &-default{
+        color: map-get($colors, "default");
+    }
+    
+    &-white{
+        color: map-get($colors, "white");
+    }
+}

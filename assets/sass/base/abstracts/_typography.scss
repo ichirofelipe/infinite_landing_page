@@ -1,0 +1,174 @@
+:root {
+    font-size: $fontsize;
+    font-family: $fontfamily;
+    color: map-get($colors, "default");
+
+    @media screen and (max-width: $breakpoint-xl - 1){
+        font-size: $fontsize;
+    }
+    @media screen and (max-width: $breakpoint-lg - 1){
+        font-size: $fontsize - 5%;
+    }
+    @media screen and (max-width: $breakpoint-md - 1){
+        font-size: $fontsize;
+    }
+    @media screen and (max-width: $breakpoint-sm - 1){
+        font-size: $fontsize - 5%;
+    }
+    @media screen and (max-width: $breakpoint-xs - 1){
+        font-size: $fontsize - 5%;
+    }
+}
+
+h1{
+    font-size: 4.8rem;
+    line-height: 130%;
+    font-weight: 500;
+
+    @media only screen and (max-width: $breakpoint-md - 1) {
+        font-size: 4.3rem;
+    }
+}
+h4{
+    font-size: 2.4rem;
+    line-height: 120%;
+    font-weight: 500;
+
+    @media only screen and (max-width: $breakpoint-md - 1) {
+        font-size: 2rem;
+    }
+}
+p{
+    font-size: 1.6rem;
+    line-height: 120%;
+
+    @media only screen and (max-width: $breakpoint-md - 1) {
+        font-size: 1.4rem;
+    }
+}
+a{
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+
+.text{
+
+    &-center{
+        text-align: center;
+    }
+    &-left{
+        text-align: left;
+    }
+    &-bold{
+        font-weight: bold;
+    }
+    &-default{
+        text-decoration: none;
+        color: map-get($colors, "default");
+    }
+    &-wrap{
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+    &-plain{
+        background: none !important;
+        border: none;
+        text-align: left;
+        font-size: 16px;
+
+        @media only screen and (max-width: $breakpoint-sm - 1) {
+            font-size: 18px;
+        }
+    }
+    &-clickable{
+        cursor: pointer;
+    }
+}
+
+.title{
+    font-weight: 600;
+    @include m(xl){
+        font-size: 6rem;
+        line-height: 130%;
+
+        @media only screen and (max-width: $breakpoint-md - 1) {
+            font-size: 5rem;
+        }
+    }
+    @include m(lg){
+        font-size: 4.8rem;
+        line-height: 130%;
+
+        @media only screen and (max-width: $breakpoint-md - 1) {
+            font-size: 4rem;
+        }
+    }
+    @include m(md){
+        font-size: 3.6rem;
+        line-height: 130%;
+        
+        @media only screen and (max-width: $breakpoint-md - 1) {
+            font-size: 3.1rem;
+        }
+    }
+    @include m(sm){
+        font-size: 2.4rem;
+        line-height: 120%;
+
+        @media only screen and (max-width: $breakpoint-md - 1) {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+
+    @include m(3){
+        -webkit-line-clamp: 3;
+    }
+}
+
+
+// FONTELLO
+
+@font-face {
+    font-family: 'fontello';
+    src: url('/assets/css/fonts/fontello.eot?35319819');
+    src: url('/assets/css/fonts/fontello.eot?35319819#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/fontello.woff2?35319819') format('woff2'),
+         url('/assets/css/fonts/fontello.woff?35319819') format('woff'),
+         url('/assets/css/fonts/fontello.ttf?35319819') format('truetype'),
+         url('/assets/css/fonts/fontello.svg?35319819#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+
+    font-variant: normal;
+    text-transform: none;
+
+    line-height: 1em;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
