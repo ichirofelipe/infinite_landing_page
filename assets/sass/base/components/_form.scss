@@ -11,6 +11,7 @@
         border: 1px solid map-get($colors, "dirtywhite");
         width: 100%;
         overflow: hidden;
+        background-color: map-get($colors, "white");
 
         @include m(append){
             @extend %center-content;

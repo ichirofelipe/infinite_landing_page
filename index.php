@@ -21,6 +21,13 @@
         else{
             switch($page){
                 case "websites":
+                    //ACTION LINK
+                    if(isset($_GET['action']) && $_GET['action']){
+                        $action = clean_input($_GET['action']);
+                        require_once($dir."/action/".$page."/".$action.".php");
+                        exit;
+                        break;
+                    }
                     require_once("action/websites_list.php");
                     require_once($dir."websites.php");
                     break;

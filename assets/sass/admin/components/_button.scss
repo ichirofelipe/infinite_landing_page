@@ -6,6 +6,8 @@
     transition: 0.5s;
     font-weight: bold;
     font-size: 16px;
+    text-decoration: none;
+    color: map-get($colors, 'default');
 
     @include m(default){
         border-radius: 3px;

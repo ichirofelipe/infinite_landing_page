@@ -2,10 +2,10 @@
     <div class="heading d-flex justify-between align-items-center">
         <h1 class="title title--md">Websites</h1>
 
-        <button data-table="websites" data-toggle="modal" data-target="upload" class="button button--default">
+        <a href="/admin/websites/create-form" class="button button--default">
             <i class="icon-plus"></i>
             <span class="ml-1">Add Website</span>
-        </button>
+        </a>
     </div>
 
     <div class="table__container">
