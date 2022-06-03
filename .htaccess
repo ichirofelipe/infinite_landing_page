@@ -7,6 +7,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 ErrorDocument 403 /infinite_landing_page/include/pages/user/403.php?status=true
 ErrorDocument 404 /infinite_landing_page/include/pages/user/404.php?status=true
 
+
+#USER PAGES
+RewriteCond %{HTTP_HOST} ^(^.*)\.ilp.test
+RewriteRule ^(.*)$ index.php?site_name=%1 [L]
+
 #ADMIN PAGES
 RewriteRule ^admin$ index.php?admin_code=websites&active_page=websites [L]
 RewriteRule ^admin/([a-z]+)$ index.php?active_page=$1&admin_code=$1 [L]

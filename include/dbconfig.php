@@ -75,9 +75,9 @@ function userVerificationQuery($data, $getLastId = false, $table = 'users'){
   }
 }
 
-function userExistsQuery($user, $table = 'users'){
+function dataExistsQuery($user, $table, $column){
   global $conn, $prefix;
-  $query = "SELECT * FROM $prefix"."$table WHERE $table"."_username = '".$user."'";
+  $query = "SELECT * FROM $prefix"."$table WHERE $table"."_". $column ." = '".$user."'";
   $result = $conn->query($query);
   
   return $result->fetch_assoc();

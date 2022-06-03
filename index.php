@@ -1,5 +1,6 @@
 <?php
     require_once('action/authentication.php');
+    dd($_GET);
     
     if(isset($_GET['admin_code']) && $_GET['admin_code']){
         $page = clean_input($_GET['admin_code']);

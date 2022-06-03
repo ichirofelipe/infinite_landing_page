@@ -11,7 +11,7 @@
         <?php foreach($data as $d){ ?>
             <tr>
                 <?php foreach($d as $value){ ?>
-                    <td><?php $value ?></td>
+                    <td><?= $value ?></td>
                 <?php } ?>
                 <td class="d-flex">
                     <form data-confirm="Are you sure you want to delete this <?= $action ?>?" method="POST" action="/<?= $action ?>-request">

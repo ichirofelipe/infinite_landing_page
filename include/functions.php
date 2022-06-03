@@ -135,7 +135,7 @@
                         if(strlen($data[$fillable]) < $newrule[1] && $newrule[0] == 'min')
                             array_push($data['errors'], $fillable.' must not be less than '.$newrule[1].' characters');
                             
-                        if($newrule[0] == 'unique' && !empty($data[$fillable]) && userExistsQuery($data[$fillable], $newrule[1]))
+                        if($newrule[0] == 'unique' && !empty($data[$fillable]) && dataExistsQuery($data[$fillable], $newrule[1], $fillable))
                             array_push($data['errors'], $fillable.' is already in use.');
     
                         break;

@@ -15,7 +15,7 @@
                 array(
                     'columns' => $columns,
                     'data' => $websites,
-                    'action' => 'post',
+                    'action' => 'websites',
                     'url' => '/admin/websites',
                     'table' => 'websites',
                 )

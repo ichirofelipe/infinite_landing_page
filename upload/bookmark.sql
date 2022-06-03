@@ -1,2 +1,3 @@
 create table `ilp_admin` (`admin_id` int unsigned not null auto_increment primary key, `admin_username` varchar(32) not null, `admin_password` varchar(64) not null, `admin_created_at` datetime not null, `admin_updated_at` datetime not null);
 create table `ilp_websites` (`websites_id` bigint unsigned not null auto_increment primary key, `websites_domain` varchar(32) not null, `websites_title` varchar(32) not null, `websites_description` varchar(2048) not null, `websites_content` longtext not null, `websites_created_at` datetime not null, `websites_updated_at` datetime not null);
+alter table `ilp_websites` add unique `ilp_websites_websites_domain_unique`(`websites_domain`);
