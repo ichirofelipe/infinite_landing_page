@@ -21,12 +21,9 @@
 @import "base/components/alert";
 @import "base/components/pagination";
 @import "base/components/modal";
-@import "admin/components/icons";
-@import "admin/components/form";
-@import "admin/components/table";
-@import "admin/components/button";
-@import "admin/components/tiny";
+@import "base/components/icons";
+@import "base/components/form";
 
 // Layouts
-@import "admin/layout/footer";
-@import "admin/layout/header";
+@import "base/layout/footer";
+@import "base/layout/header";

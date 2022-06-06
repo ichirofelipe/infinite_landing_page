@@ -17,10 +17,12 @@
                     <textarea data-fieldname="Description" data-rules="required,max:2048" name="description" id="" cols="30" rows="10" placeholder="Description *"></textarea>
                 </div>
 
+                
                 <div class="mt-3">
                     <textarea data-fieldname="Content" data-rules="required" class="form__group" id="tiny" name="content" placeholder="Content *">
-
+                        
                     </textarea>
+                    <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
                 </div>
 
                 <div class="mt-3">
@@ -46,82 +48,5 @@
 
     <script src="/assets/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="/assets/js/admin.js?v=<?=date('YmHdis')?>"></script>
-
-    <script>
-        tinymce.init({
-            selector: 'textarea#tiny',
-            height: 500,
-            menubar: false,
-            plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-            'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount', 'template'
-            ],
-            toolbar: 'undo redo | blocks | bold italic backcolor | ' +
-            'alignleft aligncenter alignright alignjustify | insertfile image | ' +
-            'bullist numlist outdent indent | removeformat | template code',
-            image_advtab: true,
-            file_picker_types: 'image',
-            file_picker_callback: function (cb, value, meta) {
-                var input = document.createElement('input');
-                input.setAttribute('type', 'file');
-                input.setAttribute('accept', 'image/*');
-
-                input.onchange = function () {
-                var file = this.files[0];
-
-                var reader = new FileReader();
-                reader.onload = function () {
-
-                    var id = 'blobid' + (new Date()).getTime();
-                    var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-                    var base64 = reader.result.split(',')[1];
-                    var blobInfo = blobCache.create(id, file, base64);
-                    blobCache.add(blobInfo);
-
-                    cb(blobInfo.blobUri(), { title: file.name });
-                };
-                reader.readAsDataURL(file);
-                };
-
-                input.click();
-            },
-            templates: [
-                { 
-                    title: 'New Table', 
-                    description: 'creates a new table', 
-                    content: `<div class="mceTmpl">
-                                <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <th scope="col">Column1</th>
-                                        <th scope="col">Column2</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Value1</td>
-                                        <td>Value2</td>
-                                    </tr>
-                                </table>
-                            </div>`
-                },
-                { 
-                    title: 'Starting my story', 
-                    description: 'A cure for writers block', 
-                    content: 'Once upon a time...' },
-                { 
-                    title: 'New list with dates', 
-                    description: 'New List with dates', 
-                    content: `<div class="mceTmpl">
-                                <span class="cdate">cdate</span><br>
-                                <span class="mdate">mdate</span>
-                                <h2>My List</h2>
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>`
-                }
-            ],
-        });
-    </script>
 </body>
 </html>

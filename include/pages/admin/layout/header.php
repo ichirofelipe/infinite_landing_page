@@ -1,7 +1,10 @@
 <?php
+
+$title = ucfirst($params['page_title']??'Admin ILP');
+
 $active = '';
-if(isset($_GET['active_page']) && $_GET['active_page'])
-    $active = clean_input($_GET['active_page']);
+if(isset($params['active_page']) && $params['active_page'])
+    $active = $params['active_page'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +13,7 @@ if(isset($_GET['active_page']) && $_GET['active_page'])
         <meta name="mobile-web-app-capable" content="yes">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin ILP</title>
+        <title><?= $title ?></title>
 
         <link rel="stylesheet" href="/assets/css/admin.css?v=<?=date('YmHdis')?>">
         <script src="/assets/js/jquery.js"></script>

@@ -2,16 +2,27 @@
 
 require_once('../include/dbconfig.php');
 require_once('rules/website_rules.php');
-
-$requests = $_POST;
+require_once('auth.php');
+require_once('clean_requests.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    if(!$admin){
+        closeConn();
+        echo    "<script>
+                    alert('Unauthorized Request!');
+                    window.location.href = '/admin/login';
+                </script>";
+        exit;
+    }
+
+
+
     if(isset($requests['delete']) && $requests['delete']){
-        $id = clean_input($requests['delete']);
+        $id = $requests['delete'];
         
         if(deleteQuery($id, 'websites')){
             closeConn();
@@ -29,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     alert('Something went wrong!');
                     window.location.href = '". ($requests['redirect']??'/') ."'
                 </script>";
+        exit;
     }
 
 
@@ -37,7 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-
+    if(isset($requests['update'])){
+        $rules['domain'] = 'required,max:32';
+    }
     //VALIDATE REQUESTS
     $data = validateRequests($requests, $rules);
     if(count($data['errors'])){
@@ -52,12 +66,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['errors']);
     
     try{
-        if($query = insertQuery($data, 'websites')){
-            closeConn();
 
-            if($requests['captcha-input']){
-                generateToken($requests['captcha-input'], '_captcha', 60);
-            }
+        $query = false;
+        if(isset($requests['update'])){
+            $query = updateQuery($data, 'websites', $requests['update']);
+        }
+        else{
+            $query = insertQuery($data, 'websites');
+        }
+
+        if($query){
+            closeConn();
             
             echo    "<script>
                         alert('Submitted Successfully!');
@@ -72,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     alert('Error Submitting Request!');
                     window.location.href = '/admin/websites'
                 </script>";
+        exit;
     }
     catch(Exception $e){
         logInfo($e);
@@ -81,9 +101,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     alert('Error Submitting Request!');
                     window.location.href = '/admin/websites'
                 </script>";
+        exit;
     }
 }
+
 closeConn();
 header('Location: /admin/websites');
- 
+
 ?>

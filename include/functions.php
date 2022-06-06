@@ -40,6 +40,9 @@
     function is_jwt_valid($jwt, $secret = 'iloveFamily') {
         // split the jwt
         $tokenParts = explode('.', $jwt);
+        if(!isset($tokenParts[0]) || !isset($tokenParts[1]) || !isset($tokenParts[2])){
+            return FALSE;
+        }
         $header = base64_decode($tokenParts[0]);
         $payload = base64_decode($tokenParts[1]);
         $signature_provided = $tokenParts[2];
@@ -115,7 +118,10 @@
         
         foreach($rules as $fillable => $rule){
             $rules_arr = explode(',', $rule);
-            $data[$fillable] = clean_input($requests[$fillable]);
+            if(!isset($requests[$fillable])){
+                continue;
+            }
+            $data[$fillable] = $requests[$fillable];
     
             foreach($rules_arr as $rule){
                 switch($rule){

@@ -1,0 +1,187 @@
+mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''2022-06-06 11:51:15 WHERE websites_id =' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(60): updateQuery(Array, 'websites', '')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '6')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 16:36:35','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(76): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 16:37:48','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(76): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 16:37:52','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(76): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 16:37:53','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(76): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '')
+#2 {main}mysqli_sql_exception: Duplicate entry 'default' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:153
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(153): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(73): updateQuery(Array, 'websites', '8')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:29','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:31','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:31','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:32','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:32','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:36:33','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:37:25','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:39:40','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:40:38','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'websites_created_at,websites_updated_at)
+  VALUES (,'2022-06-06 17:41:21','2...' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}

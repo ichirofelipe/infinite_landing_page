@@ -29,6 +29,10 @@
             margin-top: 2rem;
         }
 
+        *[disabled]{
+            background: map-get($colors, "dimwhite");;
+        }
+
         input,textarea {
             padding: 10px;
             width: 100%;

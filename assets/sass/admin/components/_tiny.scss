@@ -1,0 +1,16 @@
+#tiny_ifr {
+    padding: 10px;
+
+    
+}
+
+.mce-content-body {
+    p:first-child {
+        margin: 0 !important;
+    }
+}
+
+.tox-tinymce{
+    border-radius: 5px !important;
+    border: 1px solid map-get($colors, "dirtywhite") !important;
+}

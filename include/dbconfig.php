@@ -83,10 +83,10 @@ function dataExistsQuery($user, $table, $column){
   return $result->fetch_assoc();
 }
 
-function findQuery($id, $table){
+function findQuery($value, $table, $column = 'id'){
   global $conn, $prefix;
   
-  $query = "SELECT * FROM $prefix"."$table WHERE $table"."_id =".$id;
+  $query = "SELECT * FROM $prefix"."$table WHERE $table"."_".$column." = '".$value."'";
   $result = $conn->query($query);
 
   return $result->fetch_assoc();
@@ -130,6 +130,25 @@ function toggleStateQuery($id, $table, $column, $value){
   $query = "UPDATE ".$prefix.$table."
   SET ".$column." = '".$value."', $table"."_updated_at = '". $datetime ."'
   WHERE $table"."_id = ".$id;
+  
+  $result = $conn->query($query);
+
+  return $result;
+}
+
+function updateQuery($data, $table, $id){
+  global $conn, $prefix;
+  $timestamp = time();
+  $datetime = date('Y-m-d H:i:s', $timestamp);
+  
+  $query = "UPDATE ".$prefix.$table." SET ";
+  
+  foreach($data as $key => $value){
+    $query .= $table."_".$key." = '". $value."',";
+  }
+
+  $query .= " $table"."_updated_at = '". $datetime."'";
+  $query .= " WHERE $table"."_id = ".$id;
   
   $result = $conn->query($query);
 
