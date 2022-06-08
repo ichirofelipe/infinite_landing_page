@@ -1,0 +1,5 @@
+mysqli_sql_exception: Unknown column 'websites_name' in 'field list' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(75): insertQuery(Array, 'websites')
+#2 {main}

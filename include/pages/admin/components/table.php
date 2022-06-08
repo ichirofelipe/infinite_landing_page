@@ -11,10 +11,22 @@
         <?php foreach($data as $d){ ?>
             <tr>
                 <?php foreach($d as $value){ ?>
-                    <td><?= $value ?></td>
+                    <td><?php 
+                        switch($value){
+                            case 'n':
+                                echo 'No';
+                                break;
+                            case 'y':
+                                echo 'Yes';
+                                break;
+                            default:
+                                echo $value;
+                                break;
+                        }
+                    ?></td>
                 <?php } ?>
                 <td class="d-flex">
-                    <a href="/admin/websites/edit-form/<?= $d[$table.'_id'] ?>" class="text-plain title--sm text-default text-clickable">
+                    <a href="/admin/<?= $table ?>/edit-form/<?= $d[$table.'_id'] ?>" class="text-plain title--sm text-default text-clickable">
                         <i class="icon-pencil"></i>
                     </a>
                     <form data-confirm="Are you sure you want to delete this <?= $action ?>?" method="POST" action="/<?= $action ?>-request">

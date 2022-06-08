@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $limit = $toShow??9;
     $pages = $pageDisplay??5;
     $skip = $limit * ($listPage - 1);
-    $websites = selectQuery('websites', $skip, $limit, 'websites_id,websites_domain,websites_name,websites_title,websites_description,websites_is_default,websites_created_at,websites_updated_at');
-    $columns = getColumns($websites[0]??$websites);
-    $totalWebsites = countQuery('websites');
-    $pagination = paginate($totalWebsites['count'], $listPage, $limit, $pages);
+    $banners = selectQuery('banners', $skip, $limit, 'banners_id,banners_image,banners_title,banners_url,banners_created_at,banners_updated_at');
+    $columns = getColumns($banners[0]??$banners);
+    $totalBanners = countQuery('banners');
+    $pagination = paginate($totalBanners['count'], $listPage, $limit, $pages);
 }
  
 ?>

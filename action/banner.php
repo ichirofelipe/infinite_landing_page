@@ -1,7 +1,7 @@
 <?php
 
 require_once('../include/dbconfig.php');
-require_once('rules/website_rules.php');
+require_once('rules/banner_rules.php');
 require_once('auth.php');
 require_once('clean_requests.php');
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($requests['delete']) && $requests['delete']){
         $id = $requests['delete'];
         
-        if(deleteQuery($id, 'websites')){
+        if(deleteQuery($id, 'banners')){
             closeConn();
 
             echo    "<script>
@@ -54,33 +54,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     //VALIDATE REQUESTS
     $data = validateRequests($requests, $rules);
+
     if(count($data['errors'])){
         closeConn();
         
         echo    "<script>
                     alert('". ($data['errors'][0]??'Submission Failed!') ."');
-                    window.location.href = '/admin/websites'
+                    window.location.href = '/admin/banners'
                 </script>";
         exit;
     }
     unset($data['errors']);
     
     try{
+        if($files){
+            //FILE UPLOAD TO FOLDER
+            $micro = floor(microtime(true) * 1000);
+            $ext = pathinfo($requests['image']["name"], PATHINFO_EXTENSION);
+            $name = $micro.'.'.$ext;
+            if($result = uploadImage($requests['image'], $name)){
+                closeConn();
+            
+                echo    "<script>
+                            alert('". ($result??'Submission Failed!') ."');
+                            window.location.href = '/admin/banners'
+                        </script>";
+                exit;
+            }
+            $data['image'] = $name;
+        }
 
         $query = false;
         if(isset($requests['update'])){
-            $query = updateQuery($data, 'websites', $requests['update']);
+            $query = updateQuery($data, 'banners', $requests['update']);
         }
         else{
-            $query = insertQuery($data, 'websites');
+            $query = insertQuery($data, 'banners');
         }
 
         if($query){
+
             closeConn();
             
             echo    "<script>
                         alert('Submitted Successfully!');
-                        window.location.href = '/admin/websites'
+                        window.location.href = '/admin/banners'
                     </script>";
             exit;
         }
@@ -89,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo    "<script>
                     alert('Error Submitting Request!');
-                    window.location.href = '/admin/websites'
+                    window.location.href = '/admin/banners'
                 </script>";
         exit;
     }
@@ -99,13 +117,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         echo    "<script>
                     alert('Error Submitting Request!');
-                    window.location.href = '/admin/websites'
+                    window.location.href = '/admin/banners'
                 </script>";
         exit;
     }
 }
 
 closeConn();
-header('Location: /admin/websites');
+header('Location: /admin/banners');
 
 ?>

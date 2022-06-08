@@ -10,22 +10,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
     /*=====================*\
-        GET SUB DOMAIN
+        GET DOMAIN DETAILS
     \*=====================*/
-    if(count(explode('.', $_SERVER['HTTP_HOST'])) > 2){
-        $subdomain = explode('.', $_SERVER['HTTP_HOST'])[0];
-        if($subdomain == 'www'){
-            $subdomain = explode('.', $_SERVER['HTTP_HOST'])[1];
-        }
-        
-        $site_details = findQuery($subdomain, 'websites', 'domain');
-        if(!$site_details || isset($params['admin_code'])){
-            $params['admin_code'] = 404;
-            $params['page_title'] = '404 Not Found!';
-        }
+    //GET HTTPS or HTTP
+    $protocol = 'http://';
+    if (isset($_SERVER['HTTPS']) &&
+        ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+        isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+        $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+
+        $protocol = 'https://';
     }
-    else{
-        $site_details = findQuery('default', 'websites', 'domain');
+
+    $domain = $_SERVER['HTTP_HOST'];
+    $domArray = explode('.', $domain);
+    if(count($domArray) < 3 && $domArray[0] != 'www'){
+        $domain = "www.".$domain;
+        header('Location: '.$protocol.$domain.$_SERVER['REQUEST_URI']);
+    }
+    
+    $site_details = findQuery($domain, 'websites', 'domain');
+    if((!$site_details || isset($params['admin_code'])) && $site_details['websites_is_default'] == 'n'){
+        $params['admin_code'] = 404;
+        $params['page_title'] = '404 Not Found!';
     }
 }
 

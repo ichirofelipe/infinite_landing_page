@@ -2,8 +2,8 @@
 
 require_once('../include/dbconfig.php');
 require_once('rules/admin_signup_rules.php');
+require_once('clean_requests.php');
 
-$requests = $_POST;
 $redirect = '/admin';
 
 header("Access-Control-Allow-Origin: *");

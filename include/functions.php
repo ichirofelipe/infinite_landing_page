@@ -129,6 +129,14 @@
                         if(empty($data[$fillable]))
                             array_push($data['errors'], $fillable.' is required');
                         break;
+                    case 'image':
+                        if($result = validateImage($data[$fillable]))
+                            array_push($data['errors'], $result);
+                        break;
+                    case 'color':
+                        if(!preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", $data[$fillable]))
+                            array_push($data['errors'], $fillable.' must be a valid HEX value!');
+                        break;
                     default:
                         if(count(explode(':', $rule)) != 2)
                             break;
@@ -153,6 +161,36 @@
         }
     
         return $data;
+    }
+
+    function validateImage($image){
+        $ext['png'] = $ext['jpg'] = $ext['jpeg'] = $ext['gif'] = true;
+        $size['width'] = $size['height'] = 340;
+        $imageSize = @getimagesize($image["tmp_name"]);
+        $file_extension = pathinfo($image["name"], PATHINFO_EXTENSION);
+
+        if(!$imageSize){
+            return 'Please upload a proper Image file!';
+        }
+
+        if(!isset($ext[$file_extension])){
+            return 'Invalid type of Image! Only PNG, JPEG, GIF are allowed.';
+        }
+
+        if($image["size"] > 2000000){
+            return 'Maximum upload size is 2MB.';
+        }
+
+        return false;
+    }
+
+    function uploadImage($image, $name){
+        $target = dirname(__DIR__)."/upload/images/" . $name;
+        if (move_uploaded_file($image["tmp_name"], $target)) {
+            return false;
+        }
+
+        return "There was a problem in uploading image file!";
     }
     
     function generateToken($id, $name = "_token", $exp = 86400){

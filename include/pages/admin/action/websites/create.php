@@ -11,6 +11,9 @@
                     <input data-fieldname="Domain" data-rules="required,max:32" type="text" name="domain" placeholder="Domain *">
                 </div>
                 <div class="form__group">
+                    <input data-fieldname="Name" data-rules="required,max:32" type="text" name="name" placeholder="Name *">
+                </div>
+                <div class="form__group">
                     <input data-fieldname="Title" data-rules="required,max:32" type="text" name="title" placeholder="Title *">
                 </div>
                 <div class="form__group">
@@ -20,6 +23,20 @@
                 
                 <div class="mt-3">
                     <textarea data-fieldname="Content" data-rules="required" class="form__group" id="tiny" name="content" placeholder="Content *">
+                        
+                    </textarea>
+                    <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
+                </div>
+
+                <div class="mt-3">
+                    <textarea data-fieldname="Header Info" data-rules="required" class="form__group" id="tiny" name="header_info" placeholder="Header Info *">
+                        
+                    </textarea>
+                    <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
+                </div>
+                
+                <div class="mt-3">
+                    <textarea data-fieldname="Footer Info" data-rules="required" class="form__group" id="tiny" name="footer_info" placeholder="Footer Info *">
                         
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>

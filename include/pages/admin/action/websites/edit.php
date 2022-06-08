@@ -19,6 +19,9 @@ if(isset($params['id']) && $params['id']){
                     <input data-fieldname="Domain" data-rules="required,max:32" type="text" name="domain" placeholder="Domain *" value="<?= $website['websites_domain'] ?>" disabled>
                 </div>
                 <div class="form__group">
+                    <input data-fieldname="Name" data-rules="required,max:32" type="text" name="name" placeholder="Name *" value="<?= $website['websites_name'] ?>">
+                </div>
+                <div class="form__group">
                     <input data-fieldname="Title" data-rules="required,max:32" type="text" name="title" placeholder="Title *" value="<?= $website['websites_title'] ?>">
                 </div>
                 <div class="form__group">
@@ -28,6 +31,20 @@ if(isset($params['id']) && $params['id']){
                 <div class="mt-3">
                     <textarea data-fieldname="Content" data-rules="required" class="form__group" id="tiny" name="content" placeholder="Content *">
                         <?= $website['websites_content'] ?>
+                    </textarea>
+                    <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
+                </div>
+
+                <div class="mt-3">
+                    <textarea class="form__group" id="tiny" name="header_info" placeholder="Header Info *">
+                        <?= $website['websites_header_info'] ?>
+                    </textarea>
+                    <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
+                </div>
+                
+                <div class="mt-3">
+                    <textarea class="form__group" id="tiny" name="footer_info" placeholder="Footer Info *">
+                        <?= $website['websites_footer_info'] ?>
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
                 </div>

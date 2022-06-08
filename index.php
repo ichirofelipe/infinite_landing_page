@@ -35,6 +35,18 @@
                     require_once("action/websites_list.php");
                     require_once($dir."websites.php");
                     break;
+                case "banners":
+                    //ACTION LINK
+                    if(isset($params['action']) && $params['action']){
+                        $action = $params['action'];
+                        require_once($dir."/action/".$page."/".$action.".php");
+                        closeConn();
+                        exit;
+                        break;
+                    }
+                    require_once("action/banners_list.php");
+                    require_once($dir."banners.php");
+                    break;
                 default:
                     require_once($dir."404.php");
                     break;
