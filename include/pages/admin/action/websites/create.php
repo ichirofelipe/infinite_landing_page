@@ -22,21 +22,21 @@
 
                 
                 <div class="mt-3">
-                    <textarea data-fieldname="Content" data-rules="required" class="form__group" id="tiny" name="content" placeholder="Content *">
+                    <textarea class="form__group" id="tiny" name="content" placeholder="Content *">
                         
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
                 </div>
 
                 <div class="mt-3">
-                    <textarea data-fieldname="Header Info" data-rules="required" class="form__group" id="tiny" name="header_info" placeholder="Header Info *">
+                    <textarea class="form__group" id="tiny" name="header_info" placeholder="Header Info *">
                         
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>
                 </div>
                 
                 <div class="mt-3">
-                    <textarea data-fieldname="Footer Info" data-rules="required" class="form__group" id="tiny" name="footer_info" placeholder="Footer Info *">
+                    <textarea class="form__group" id="tiny" name="footer_info" placeholder="Footer Info *">
                         
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>

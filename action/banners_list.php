@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $limit = $toShow??9;
     $pages = $pageDisplay??5;
     $skip = $limit * ($listPage - 1);
-    $banners = selectQuery('banners', $skip, $limit, 'banners_id,banners_image,banners_title,banners_url,banners_created_at,banners_updated_at');
+    $banners = selectQuery('banners', 'banners_id,banners_image,banners_title,banners_url,banners_created_at,banners_updated_at', null, $skip, $limit);
     $columns = getColumns($banners[0]??$banners);
     $totalBanners = countQuery('banners');
     $pagination = paginate($totalBanners['count'], $listPage, $limit, $pages);

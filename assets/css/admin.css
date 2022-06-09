@@ -405,6 +405,35 @@ img {
       grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  -ms-grid-columns: (minmax(0, 1fr))[1];
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media only screen and (min-width: 426px) {
+  .grid-xs-cols-2 {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .grid-md-cols-3 {
+    -ms-grid-columns: (minmax(0, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -437,6 +466,10 @@ img {
 
 .mt-1 {
   margin-top: 1rem !important;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
 }
 
 .mt-3 {
@@ -480,13 +513,31 @@ img {
   padding-right: 1rem !important;
 }
 
+.py-1 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 .py-2 {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
 }
 
+.pb-2 {
+  padding-bottom: 2rem !important;
+}
+
 .pt-6 {
   padding-top: 6rem !important;
+}
+
+.gap-x-20 {
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.gap-y-10 {
+  row-gap: 10px;
 }
 
 .w-full {
@@ -920,7 +971,7 @@ img {
   background: #efefef;
 }
 
-.form__group input, .form__group textarea {
+.form__group input, .form__group textarea, .form__group select {
   padding: 10px;
   width: 100%;
   border: none;
@@ -928,11 +979,15 @@ img {
   font-family: sans-serif;
 }
 
-.form__group input::-ms-reveal, .form__group input::-ms-clear {
+.form__group input, .form__group select {
+  height: 35px;
+}
+
+.form__group input::-ms-reveal, .form__group input::-ms-clear, .form__group select::-ms-reveal, .form__group select::-ms-clear {
   display: none;
 }
 
-.form__group input.password:focus ~ label {
+.form__group input.password:focus ~ label, .form__group select.password:focus ~ label {
   opacity: 1;
   pointer-events: all;
 }

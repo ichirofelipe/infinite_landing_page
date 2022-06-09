@@ -1,0 +1,7 @@
+footer{
+    .copy{
+        font-size: 12px;
+        font-weight: 600;
+        color: lighten(map-get($colors, 'default'), 20%);
+    }
+}

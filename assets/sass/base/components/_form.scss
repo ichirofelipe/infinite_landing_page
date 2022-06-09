@@ -33,14 +33,16 @@
             background: map-get($colors, "dimwhite");;
         }
 
-        input,textarea {
+        input,textarea,select {
             padding: 10px;
             width: 100%;
             border: none;
             outline: none;
             font-family: sans-serif;
         }
-        input{
+        input,select{
+            height: 35px;
+
             &::-ms-reveal,
             &::-ms-clear {
                 display: none;

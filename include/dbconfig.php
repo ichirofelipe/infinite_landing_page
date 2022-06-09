@@ -92,11 +92,22 @@ function findQuery($value, $table, $column = 'id'){
   return $result->fetch_assoc();
 }
 
-function selectQuery($table, $skip = null, $limit = 0, $toSelect = '*'){
+function selectQuery($table, $toSelect = '*', $condition = null, $skip = null, $limit = null){
   global $conn, $prefix;
 
-  $query = "SELECT $toSelect FROM $prefix"."$table ORDER BY $table"."_id DESC LIMIT ".($skip?$skip.',':'')."".$limit;
-  
+  $query = "SELECT $toSelect FROM $prefix"."$table ";
+  if($condition){
+    $query .= "WHERE ";
+    foreach($condition as $key => $value){
+      $query .= $key.$value." ";
+    }
+  }
+
+  $query .= "ORDER BY $table"."_id DESC ";
+
+  if($limit)
+    $query .= "LIMIT ".($skip?$skip.',':'')."".$limit;
+    
   $result = $conn->query($query);
 
   return $result->fetch_all(MYSQLI_ASSOC);

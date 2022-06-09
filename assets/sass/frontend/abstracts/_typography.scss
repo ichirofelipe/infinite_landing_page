@@ -1,0 +1,5 @@
+@import "../../base/abstracts/typography";
+
+:root {
+    color: map-get($colors, "white");
+}

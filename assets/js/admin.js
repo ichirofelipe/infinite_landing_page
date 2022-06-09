@@ -270,6 +270,33 @@ $(function() {
                 description: 'This is to add padding to your content', 
                 content: `<div class="container"><p>Content here...</p></div>`
             },
+            { 
+                title: '2 Columns', 
+                description: 'This is to add 2 columns to your content', 
+                content: `<div class="d-grid grid-xs-cols-2 grid-cols-1 gap-x-20 gap-y-10">
+                            <article class="banner">
+                                <div class="banner__image">
+                                    <img src="https://mr0s.com/images/top_banner_left.png">
+                                </div>
+                                <div class="banner__overlay flex-column">
+                                    <span class="banner_summary1_0">나에게 딱 맞는 사이트 추천 문의</span>
+                                    <span class="banner_summary2_0">텔래그램 : mrzero1</span>
+                                </div>
+                            </article>
+                            <article class="banner">
+                                <div class="banner__image">
+                                    <img src="https://mr0s.com/images/top_banner_right.png">
+                                </div>
+                                <div class="banner__overlay flex-column">
+                                    <span class="banner_summary1_1">먹튀제로 사이트 추천은</span>
+                                    <span class="banner_summary2_1">미스터제로</span>
+                                </div>
+                            </article>
+                          </div>`
+            },
+        ],
+        protect: [
+            /<\?php[\s\S]*?\?>/g // Protect php code
         ],
     });
 

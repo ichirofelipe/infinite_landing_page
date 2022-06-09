@@ -2,11 +2,11 @@
 @import "base/abstracts/tools";
 @import "base/abstracts/mixins";
 @import "base/abstracts/variables";
-@import "base/abstracts/typography";
+@import "frontend/abstracts/typography";
 
 // Base
 @import "base/base/colors";
-@import "base/base/styles";
+@import "frontend/base/styles";
 @import "base/base/display";
 @import "base/base/grid";
 @import "base/base/spacings";
@@ -23,7 +23,9 @@
 @import "base/components/modal";
 @import "base/components/icons";
 @import "base/components/form";
+@import "frontend/components/banner";
+
 
 // Layouts
-@import "base/layout/footer";
-@import "base/layout/header";
+@import "frontend/layout/footer";
+@import "frontend/layout/header";

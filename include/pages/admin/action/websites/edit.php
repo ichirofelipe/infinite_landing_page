@@ -29,7 +29,7 @@ if(isset($params['id']) && $params['id']){
                 </div>
 
                 <div class="mt-3">
-                    <textarea data-fieldname="Content" data-rules="required" class="form__group" id="tiny" name="content" placeholder="Content *">
+                    <textarea class="form__group" id="tiny" name="content" placeholder="Content *">
                         <?= $website['websites_content'] ?>
                     </textarea>
                     <strong><em><small>Toggle Fullscreen for a better experience</small></em></strong>

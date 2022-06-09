@@ -5,7 +5,7 @@ $rules = [
     'name'              => 'required,max:32',
     'title'             => 'required,max:32',
     'description'       => 'required,max:2048',
-    'content'           => 'required',
+    'content'           => '',
     'header_info'       => '',
     'footer_info'       => '',
 ];

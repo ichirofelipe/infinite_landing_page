@@ -1,3 +1,7 @@
+<?php
+$websites = selectQuery('websites', 'websites_id,websites_domain');
+
+?>
 <div class="container container--full mb-2">
     <div class="heading d-flex align-items-center">
         <a href="/admin/banners" class="title title--md text-default pr-1"><i class="icon-left-open"></i></a>
@@ -12,6 +16,14 @@
                 </div>
                 <div class="form__group">
                     <input data-fieldname="Url" data-rules="required,max:256" type="text" name="url" placeholder="Url *">
+                </div>
+
+                <div class="form__group">
+                    <select name="website_id" data-fieldname="Website" data-rules="required">
+                        <?php foreach($websites as $website){?>
+                            <option value="<?= $website['websites_id'] ?>"><?= $website['websites_domain'] ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
 
                 <div class="form__group">

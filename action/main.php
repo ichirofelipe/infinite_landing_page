@@ -30,10 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     
     $site_details = findQuery($domain, 'websites', 'domain');
+
     if((!$site_details || isset($params['admin_code'])) && $site_details['websites_is_default'] == 'n'){
         $params['admin_code'] = 404;
         $params['page_title'] = '404 Not Found!';
     }
+
+    $condition['banners_website_id'] = "='".$site_details['websites_id']."'";
+    $site_banners = selectQuery('banners', 'banners_title,banners_description_1,banners_description_2,banners_image,banners_url', $condition);
 }
 
 ?>

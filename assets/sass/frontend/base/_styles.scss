@@ -1,0 +1,5 @@
+@import "../../base/base/styles";
+
+html,body{
+    background-color: map-get($colors, "black");
+}
