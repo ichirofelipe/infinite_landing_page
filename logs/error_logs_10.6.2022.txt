@@ -1,0 +1,17 @@
+mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:183
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(183): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(74): updateExceptQuery(Array, 'websites', NULL)
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:183
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(183): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(74): updateExceptQuery(Array, 'websites', NULL)
+#2 {main}mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*' at line 1 in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:183
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(183): mysqli->query('UPDATE ilp_webs...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(74): updateExceptQuery(Array, 'websites', '*')
+#2 {main}mysqli_sql_exception: Duplicate entry 'www.abc.test' for key 'ilp_websites_websites_domain_unique' in C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php:38
+Stack trace:
+#0 C:\xampp\htdocs\infinite_landing_page\include\dbconfig.php(38): mysqli->query('INSERT INTO ilp...')
+#1 C:\xampp\htdocs\infinite_landing_page\action\website.php(81): insertQuery(Array, 'websites')
+#2 {main}

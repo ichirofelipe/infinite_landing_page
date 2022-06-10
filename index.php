@@ -65,4 +65,10 @@
         closeConn();
         exit;
     }
+    else{
+        $dir = "include/pages/user/";
+        require_once($dir."404.php");
+        closeConn();
+        exit;
+    }
 ?>

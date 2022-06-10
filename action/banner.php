@@ -23,7 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if(isset($requests['delete']) && $requests['delete']){
         $id = $requests['delete'];
-        
+        $column = findQuery($id, 'banners');
+        $dir = dirname(__DIR__)."/upload/images/";
+        $file = $dir.$column['banners_image'];
+        removeImage($file);
+
         if(deleteQuery($id, 'banners')){
             closeConn();
 
@@ -69,10 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try{
         if($files){
             //FILE UPLOAD TO FOLDER
+            $id = $requests['update']??null;
             $micro = floor(microtime(true) * 1000);
             $ext = pathinfo($requests['image']["name"], PATHINFO_EXTENSION);
             $name = $micro.'.'.$ext;
-            if($result = uploadImage($requests['image'], $name)){
+            if($result = uploadImage($requests['image'], $name, $id)){
                 closeConn();
             
                 echo    "<script>

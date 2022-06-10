@@ -1,0 +1,21 @@
+@import "../../base/components/pagination";
+
+.pagination{
+    margin-bottom: 1rem;
+
+    @include e(item){
+        border-color: map-get($colors, 'white');
+
+        &.disabled{
+            opacity: 0.6;
+        }
+
+        &.active{
+            background-color: map-get($colors, 'white');
+            
+            a{
+                color: map-get($colors, 'black');
+            }
+        }
+    }
+}

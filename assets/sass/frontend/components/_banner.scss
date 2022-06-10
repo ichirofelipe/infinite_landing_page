@@ -3,6 +3,10 @@
     text-align: center;
     position: relative;
     
+    *{
+        color: map-get($colors, "white");
+    }
+    
     h4{
         font-size: 18px;
     }

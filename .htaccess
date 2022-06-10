@@ -7,10 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 ErrorDocument 403 /include/pages/user/403.php?status=true
 ErrorDocument 404 /include/pages/user/404.php?status=true
 
-# RewriteCond %{HTTP_HOST} ^(^.*)\.(^.*)\.(^.*)\
-# RewriteRule ^(.*)$ index.php/subpage/$1/%1 [L]
-
 #USER PAGES
+RewriteRule ^page/([0-9]+)/?$ index.php?page=$1 [L]
 
 #ADMIN PAGES
 RewriteRule ^admin$ index.php?admin_code=websites&active_page=websites [L]

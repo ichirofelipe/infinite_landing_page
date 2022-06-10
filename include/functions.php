@@ -119,7 +119,9 @@
         foreach($rules as $fillable => $rule){
             $rules_arr = explode(',', $rule);
             if(!isset($requests[$fillable])){
-                continue;
+                if($rules_arr[0] != 'toggle')
+                    continue;
+                $requests[$fillable] = 'n';
             }
             $data[$fillable] = $requests[$fillable];
     
@@ -134,9 +136,40 @@
                             array_push($data['errors'], $result);
                         break;
                     case 'color':
-                        if(!preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", $data[$fillable]))
+                        if(!empty($data[$fillable]) && !preg_match("/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/", $data[$fillable]))
                             array_push($data['errors'], $fillable.' must be a valid HEX value!');
                         break;
+                    case 'toggle':
+                        $value = 'n';
+                        if($data[$fillable] == 'on')
+                            $value = 'y';
+
+                        $data[$fillable] = $value;
+                        break;
+                    case 'domain':
+                        //EXPLODE DOMAIN
+                        $dom_arr = explode('.', $data[$fillable]);
+                        if(count($dom_arr) == 2 && $dom_arr[0] != 'www'){
+                            $data[$fillable] = 'www.'.$data[$fillable];
+                        }
+                        //NEW ARRAY DOMAIN
+                        $dom_arr = explode('.', $data[$fillable]);
+                        if(count($dom_arr) == 3){
+                            if(checkdnsrr($data[$fillable])){
+                                array_push($data['errors'], 'This '.$fillable. ' is not available.');
+                                break;
+                            }
+                            break;
+                        }
+
+                        if(count($dom_arr) == 1 || count($dom_arr) > 3){
+                            array_push($data['errors'], 'Please enter a valid '.$fillable);
+                            break;
+                        }
+                        
+                        array_push($data['errors'], 'Please enter a valid '.$fillable);
+                        break;
+                        
                     default:
                         if(count(explode(':', $rule)) != 2)
                             break;
@@ -184,13 +217,29 @@
         return false;
     }
 
-    function uploadImage($image, $name){
-        $target = dirname(__DIR__)."/upload/images/" . $name;
+    function uploadImage($image, $name, $id = null){
+        $dir = dirname(__DIR__)."/upload/images/";
+
+        if($id){
+            $column = findQuery($id, 'banners');
+            $file = $dir.$column['banners_image'];
+            if (file_exists($file)) {
+                unlink($file);
+            }
+        }
+        
+        $target = $dir.$name;
         if (move_uploaded_file($image["tmp_name"], $target)) {
             return false;
         }
 
         return "There was a problem in uploading image file!";
+    }
+
+    function removeImage($target){
+        if (file_exists($target)) {
+            unlink($target);
+        }
     }
     
     function generateToken($id, $name = "_token", $exp = 86400){
@@ -242,8 +291,20 @@
     
         if($pagination['limit'] < 2)
             return null;
-        
+
         return $pagination;
+    }
+
+    function getProtocol(){
+        $protocol = 'http://';
+        if (isset($_SERVER['HTTPS']) &&
+            ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+            isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+            $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+
+            $protocol = 'https://';
+        }
+        return $protocol;
     }
 
 ?>

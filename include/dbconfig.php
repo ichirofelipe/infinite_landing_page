@@ -4,7 +4,7 @@ require_once('functions.php');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "ilp";
+$database = "ilp_empty";
 $prefix = "ilp_";
 
 // Create connection
@@ -113,10 +113,16 @@ function selectQuery($table, $toSelect = '*', $condition = null, $skip = null, $
   return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function countQuery($table){
+function countQuery($table, $condition = null){
   global $conn, $prefix;
 
   $query = "SELECT COUNT(*) as count FROM $prefix"."$table";
+  if($condition){
+    $query .= " WHERE ";
+    foreach($condition as $key => $value){
+      $query .= $key.$value." ";
+    }
+  }
   
   $result = $conn->query($query);
   
@@ -161,6 +167,26 @@ function updateQuery($data, $table, $id){
   $query .= " $table"."_updated_at = '". $datetime."'";
   $query .= " WHERE $table"."_id = ".$id;
   
+  $result = $conn->query($query);
+
+  return $result;
+}
+
+function updateExceptQuery($data, $table, $id = null){
+  global $conn, $prefix;
+  $timestamp = time();
+  $datetime = date('Y-m-d H:i:s', $timestamp);
+  
+  $query = "UPDATE ".$prefix.$table." SET ";
+  
+  foreach($data as $key => $value){
+    $query .= $table."_".$key." = '". $value."',";
+  }
+
+  $query .= " $table"."_updated_at = '". $datetime."'";
+  if($id)
+    $query .= " WHERE $table"."_id != ".$id;
+
   $result = $conn->query($query);
 
   return $result;

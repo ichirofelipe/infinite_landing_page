@@ -38,15 +38,6 @@ $websites = selectQuery('websites', 'websites_id,websites_domain');
                     <textarea data-fieldname="Description 2" data-rules="required,max:2048" name="description_2" id="" cols="30" rows="10" placeholder="Description 2 *"></textarea>
                 </div>
 
-                <div class="form__group">
-                    <input data-fieldname="Border Color" data-rules="max:10" type="text" name="border_color" placeholder="Border Color">
-                </div>
-                <strong><em><small>Use HEX values: #000000</small></em></strong>
-                <div class="form__group">
-                    <input data-fieldname="Border Color (onHover)" data-rules="max:10" type="text" name="border_color_hover" placeholder="Border Color (onHover)">
-                </div>
-                <strong><em><small>Use HEX values: #000000</small></em></strong>
-
                 <div class="mt-3">
                     <button type="submit" class="button button--default">Submit</button>
                 </div>

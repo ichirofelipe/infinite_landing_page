@@ -23,6 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if(isset($requests['delete']) && $requests['delete']){
         $id = $requests['delete'];
+
+        //CHECK IF MAIN DOMAIN THEN DO NOT DELETE
+        $website = findQuery($id, 'websites');
+        if($website['websites_is_default'] == 'y'){
+            closeConn();
+            echo "<script>
+                    alert('Atleast 1 domain should be default! cannot delete default website.');
+                    window.location.href = '". ($requests['redirect']??'/') ."'
+                </script>";
+            exit;
+        }
         
         if(deleteQuery($id, 'websites')){
             closeConn();
@@ -48,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-
+    //CHECK IF POST IS UPDATE
     if(isset($requests['update'])){
         unset($rules['domain']);
     }
@@ -64,10 +75,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     unset($data['errors']);
-    
+
     try{
 
+        //INIT VARIABLES
         $query = false;
+        $redirect_domain = '/admin/websites';
+        
+        //VALIDATION FOR REDIRECTING ADMIN TO THE NEWLY CREATED DOMAIN OR NEW DOMAIN
+        if(isset($data['is_default'])){
+            
+            //CHECK IF IS DEFAULT VALUE IS ON/OFF
+            switch($data['is_default']){
+                case 'y':
+                    $website = null;
+                    if(!isset($data['domain']))
+                        $website = findQuery($requests['update'], 'websites');
+                        
+                    $redirect_domain = $data['domain']??$website['websites_domain']??'/admin/websites';
+
+                    if($redirect_domain != '/admin/websites')
+                        $redirect_domain = getProtocol().$redirect_domain.'/admin/websites';
+                        
+                    $remove_default['is_default'] = 'n';
+                    $query = updateExceptQuery($remove_default, 'websites', $requests['update']??null);
+                    break;
+                case 'n':
+                    if(isset($requests['update'])){
+                        $website = findQuery($requests['update'], 'websites');
+                        if($website['websites_is_default'] == 'y'){
+                            closeConn();
+                            echo "<script>
+                                    alert('Atleast 1 domain should be default! toggle on a different domain instead.');
+                                    window.location.href = '/admin/websites'
+                                </script>";
+                            exit;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        //UPDATE OR CREATE QUERY
         if(isset($requests['update'])){
             $query = updateQuery($data, 'websites', $requests['update']);
         }
@@ -76,11 +125,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if($query){
-            closeConn();
-            
+
+            //MESSAGE CHANGED IF REDIRECTED TO NEWLY CREATED DOMAIN
+            $message = null;
+            if(isset($data['domain']) && $data['is_default'] == 'y'){
+                $message = 'Submitted Successfully! Please refresh after a couple of seconds to visit the new main domain.';
+            }
+
             echo    "<script>
-                        alert('Submitted Successfully!');
-                        window.location.href = '/admin/websites'
+                        alert('".($message??'Submitted Successfully!')."');
+                        window.location.href = '". $redirect_domain ."'
                     </script>";
             exit;
         }
